@@ -151,9 +151,16 @@ def event_handle(event):
         msg = str(event["message"]["text"])
         if msg == "สวัสดี":
             replyObj = TextSendMessage(text="欢迎参加Osvaldo World")
+            line_bot_api.reply_message(rtoken, replyObj)
+        elif msg == "再见":
+            replyObj = TextSendMessage(text="回头见")
+            line_bot_api.reply_message(rtoken, replyObj)
+        elif msg == "你过得还好吗?":
+            replyObj = TextSendMessage(text="我很好")
+            line_bot_api.reply_message(rtoken, replyObj)
         else :
             replyObj = TextSendMessage(text="ไม่รู้ไม่ชี้")
-        line_bot_api.reply_message(rtoken, replyObj)
+            line_bot_api.reply_message(rtoken, replyObj)
     elif msgType == "image":
         try:
             message_content = line_bot_api.get_message_content(event['message']['id'])
