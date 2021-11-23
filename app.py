@@ -61,7 +61,6 @@ def index():
             return render_template("index.html",data=data)  
     return render_template('index.html')
 
-
 def process_file(path, filename):
     detect_object(path, filename)
     
